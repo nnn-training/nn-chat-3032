@@ -1,5 +1,5 @@
 'use strict';
-const http = require('http');
+const http = require('node:http');
 const auth = require('http-auth');
 const router = require('./lib/router');
 
@@ -16,7 +16,7 @@ const server = http.createServer(basic.check((req, res) => {
   })
   .on('clientError', e => {
     console.error('Client Error', e);
-});
+  });
 
 const port = 8000;
 server.listen(port, () => {
